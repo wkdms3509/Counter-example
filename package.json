@@ -1,31 +1,54 @@
 {
+  "type": "module",
   "name": "counter-redux-ts",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@babel/plugin-transform-modules-commonjs": "^7.18.2",
+    "@babel/plugin-transform-runtime": "^7.18.2",
     "@testing-library/jest-dom": "^5.16.4",
-    "@testing-library/react": "^13.2.0",
     "@testing-library/user-event": "^13.5.0",
     "@types/jest": "^27.5.1",
     "@types/node": "^16.11.36",
     "@types/react": "^18.0.9",
     "@types/react-dom": "^18.0.5",
+    "@types/react-redux": "^7.1.24",
+    "@types/redux-thunk": "^2.1.0",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
+    "react-redux": "^8.0.2",
+    "react-router-dom": "^6.3.0",
     "react-scripts": "5.0.1",
+    "react-thunk": "^1.0.0",
+    "redux": "^4.2.0",
+    "redux-actions": "^2.6.5",
+    "redux-thunk": "^2.4.1",
+    "styled-components": "^5.3.5",
     "typescript": "^4.6.4",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "test": "jest",
+    "eject": "react-scripts eject",
+    "storybook": "start-storybook -p 6006 -s public",
+    "build-storybook": "build-storybook -s public"
   },
   "eslintConfig": {
     "extends": [
       "react-app",
       "react-app/jest"
+    ],
+    "overrides": [
+      {
+        "files": [
+          "**/*.stories.*"
+        ],
+        "rules": {
+          "import/no-anonymous-default-export": "off"
+        }
+      }
     ]
   },
   "browserslist": {
@@ -39,5 +62,31 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@babel/core": "^7.18.2",
+    "@babel/preset-env": "^7.18.2",
+    "@babel/preset-react": "^7.17.12",
+    "@babel/preset-typescript": "^7.17.12",
+    "@storybook/addon-actions": "^6.5.5",
+    "@storybook/addon-essentials": "^6.5.5",
+    "@storybook/addon-interactions": "^6.5.5",
+    "@storybook/addon-links": "^6.5.5",
+    "@storybook/builder-webpack5": "^6.5.5",
+    "@storybook/manager-webpack5": "^6.5.5",
+    "@storybook/node-logger": "^6.5.5",
+    "@storybook/preset-create-react-app": "^4.1.1",
+    "@storybook/react": "^6.5.5",
+    "@storybook/testing-library": "0.0.11",
+    "@testing-library/react": "^13.2.0",
+    "@types/styled-components": "^5.1.25",
+    "babel-jest": "^28.1.0",
+    "babel-plugin-named-exports-order": "0.0.2",
+    "jest": "^28.1.0",
+    "jest-environment-jsdom": "^28.1.0",
+    "prop-types": "^15.8.1",
+    "react-test-renderer": "^18.1.0",
+    "ts-jest": "^28.0.3",
+    "webpack": "^5.72.1"
   }
 }
