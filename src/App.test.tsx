@@ -1,10 +1,11 @@
-// import React from 'react';
+import React from 'react';
 // import { render, screen } from '@testing-library/react';
 // import App from './App';
 import { render } from '@testing-library/react';
 import counterReducer, { increase, decrease, increaseBy } from './modules/counter';
-// import {store} from './index';
 import Counter from '../src/components/Counter';
+// import { UseSelector,useDispatch, useSelector } from './mock/react-redux';
+// import { useSelector } from 'react-redux';
 
 // 액션 생성 함수 ㅇ
 // 리듀서
@@ -71,4 +72,32 @@ describe('reducer는 input값에 따른 올바른 state를 리턴한다.', () =>
     const expected = { count: 5 };
     expect(results).toEqual(expected);
   })
+
+  it('action에 빈 객체를 넣어주면 initialState가 반환되어야 한다', () => {
+    const state = { count: 0 };
+    const action = {};
+    
+    const results = counterReducer(state, action);
+    const expected = { count: 0 };
+
+    expect(results).toEqual(expected);
+  })
 })
+
+// jest.mock('react-redux');
+
+// describe('useSelector 테스트', () => {
+//   it('test', () => {
+//     const tasks = [
+//       {type: 'INCREASE'},
+//       {type: 'DECREASE'},
+//       {type: 'INCREASE_BY'},
+//     ];
+
+//     useSelector.mockImplementation((selector) => selector({
+//       tasks,
+//     }));
+
+//     // const {getBy}
+//   })
+// })
